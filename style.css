@@ -1,0 +1,95 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+header {
+    margin-bottom: 2rem;
+}
+th {
+    color: #FFFFFF;
+}
+
+.btn-agregar:before {
+    width: 2.5rem;
+    background-color: #0277bd;
+    padding: 0.8rem;
+    border-radius: 50%;
+}
+.btn-agregar {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.btn-agregar:hover {
+    color: #e1f5fe;
+}
+
+.header-div {
+    padding: 1rem;
+    background-color: #ef6c00;
+    color: #fff;
+}
+.centrado {
+    text-align: center;
+}
+
+.tablascroll {
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+@media (min-width: 300px) {
+    .div-flex h3 {
+        font-size: 1rem;
+    }
+    .div-flex {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 400px) {
+    .div-flex h3 {
+        font-size: 1.1rem;
+    }
+}
+@media (min-width: 700px) {
+    .div-flex h3 {
+        font-size: 1.4rem;
+    }
+    .div-flex {
+        justify-content: start;
+    }
+}
+@media (min-width: 1200) {
+    .div-flex h3 {
+        font-size: 1.6rem;
+    }
+}
+
+.loading{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 2px solid grey ;
+    border-bottom: 2px solid grey;
+    border-left: 2px solid blue;
+    border-right: 2px solid grey;
+    animation: loadingtable infinite 1s;
+}
+@keyframes loadingtable {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+.div-loading{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}

@@ -57,11 +57,36 @@
             );
         }
     }
+    if($tipo==4){
+        $json = file_get_contents('php://input');
+        $data = json_decode($json,true);
+        $clasificacion = $data['clasificacion'];
+        $categoria = $data['categoria'];
+        $subcategoria = $data['subcategoria'];
+        $sql = "INSERT INTO categoria (idCategoria,clasificacion,categoria,subcategoria) VALUES (UUID(),'$clasificacion','$categoria','$subcategoria')";
+        $resultado = mysqli_query($db,$sql);
+      
+        if ($resultado == true) {
+            $estatusJson = "OK Se creo";
+        }else{
+            $estatusJson = "No se pudo insertar";
+        }
+    }
+    if ($tipo==5) {
+      $id = $_POST['id'];
+      $sql = "DELETE FROM categoria where idCategoria='$id'";
+      $resultado= mysqli_query($db, $sql);
+      if ($resultado==true) {
+        $estatusJson = "OK Se elimino";
+      }else{
+        $estatusJson = "No se pudo eliminar";
+      }
+    }
 
     $array2 = array(
         "estatus" => $estatusJson,
         "datos" => $array1,
     );
     echo json_encode($array2);
-    
+    mysqli_close($db);
 ?>
